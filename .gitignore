@@ -1,0 +1,43 @@
+# PHP / XAMPP
+config/db.php
+*.log
+php_errors.log
+
+# Session files
+/sessions/
+sess_*
+
+# Dependencies
+/vendor/
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+
+# XAMPP specific
+/xampp/
+/cgi-bin/
+
+# Cache
+/cache/
+*.cache
+
+# Uploads (if you add file uploads later)
+/uploads/*
+!/uploads/.gitkeep
+
+# Security - Never commit these
+*.pem
+*.key
+*.crt

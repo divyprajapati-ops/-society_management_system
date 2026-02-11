@@ -1,0 +1,11 @@
+{
+  "name": "screenshot-capture",
+  "version": "1.0.0",
+  "description": "Capture screenshots for documentation",
+  "scripts": {
+    "capture": "node capture-screenshots.js"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  }
+}
