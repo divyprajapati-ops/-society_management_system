@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Society Management System - Documentation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="h-10 w-10 rounded-xl bg-primary/20 flex items-center justify-center">
+                        <span class="material-symbols-outlined text-primary">description</span>
+                    </div>
+                    <span class="text-xl font-bold text-slate-800 dark:text-white">Docs</span>
+                </div>
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#overview" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition">Overview</a>
+                    <a href="#architecture" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition">Architecture</a>
+                    <a href="#roles" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition">Roles</a>
+                    <a href="#database" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition">Database</a>
+                    <a href="#api" class="nav-link text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-primary transition">API</a>
+                    <button id="themeToggle" class="p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition">
+                        <span class="material-symbols-outlined text-slate-600 dark:text-slate-300">dark_mode</span>
+                    </button>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+                <span class="material-symbols-outlined text-sm">code</span>
+                v1.0 Documentation
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white mb-6">
+                Society Management
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-500 animate-gradient">
+                    Documentation
+                </span>
+            </h1>
+            <p class="text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto mb-8">
+                Comprehensive guide to the complete society management platform with role-based access control, 
+                fund management, and resident management features.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="http://localhost:8080/backend/auth/login.php" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-white font-medium hover:bg-primary/90 transition hover:scale-105 shadow-lg shadow-primary/30">
+                    <span class="material-symbols-outlined">rocket_launch</span>
+                    Run Application
+                </a>
+                <a href="#walkthrough" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-white font-medium hover:bg-slate-300 dark:hover:bg-slate-600 transition hover:scale-105">
+                    <span class="material-symbols-outlined">visibility</span>
+                    View Walkthrough
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                Project Overview
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary">apartment</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Multi-Role System</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Complete role-based access control with Admin, Pramukh, Building Admin, and Member roles.
+                    </p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-emerald-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-emerald-500">account_balance</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Fund Management</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Track society funds, manage contributions, and maintain financial records with detailed reports.
+                    </p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-purple-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-purple-500">groups</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Resident Management</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Complete resident profile management, building assignments, and communication tools.
+                    </p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-orange-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-orange-500">event</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Meeting Management</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Schedule and manage society meetings with attendance tracking and minute recording.
+                    </p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-red-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-red-500">build</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Maintenance Tracking</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Track maintenance requests, schedule repairs, and manage vendor relationships.
+                    </p>
+                </div>
+                <div class="glass-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-blue-500">security</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Secure Authentication</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Industry-standard security with bcrypt password hashing and session management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Walkthrough -->
+    <section id="walkthrough" class="py-20 px-4 bg-slate-100 dark:bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                Application Walkthrough
+            </h2>
+            
+            <!-- Login Page -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">1. Login Page</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Professional login interface with role-based authentication. Users enter credentials and are redirected to their respective dashboards based on their role.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/login_page.png" alt="Login Page" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Dashboard -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">2. Admin Dashboard</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Comprehensive admin dashboard with system overview, user management, building statistics, and quick access to all administrative functions.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/admin_dashboard.png" alt="Admin Dashboard" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Society Fund -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">3. Society Fund Management</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Complete financial management system with fund tracking, contribution management, expense tracking, and detailed financial reports.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/society_fund.png" alt="Society Fund" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buildings Management -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">4. Buildings Management</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Manage all society buildings with complete information, unit details, and resident assignments.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/buildings.png" alt="Buildings Management" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Management -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">5. Users Management</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Complete user management system with role assignments, profile management, and access control.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/users_management.png" alt="Users Management" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pramukh Dashboard -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">6. Pramukh Dashboard</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Society Pramukh dashboard with overview of all buildings, residents, meetings, and maintenance activities.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/pramukh_dashboard.png" alt="Pramukh Dashboard" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Building Admin Dashboard -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">7. Building Admin Dashboard</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Building-specific dashboard for managing residents, maintenance, meetings, and building-specific operations.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/building_admin_dashboard.png" alt="Building Admin Dashboard" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Member Dashboard -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">8. Member Dashboard</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Personal member dashboard showing profile information, maintenance requests, meeting schedules, and society announcements.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/member_dashboard.png" alt="Member Dashboard" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maintenance -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">9. Maintenance Management</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Complete maintenance tracking system with request management, vendor coordination, and repair scheduling.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/maintenance.png" alt="Maintenance Management" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meetings -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">10. Meeting Management</h3>
+                <div class="glass-card p-6">
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Schedule and manage society meetings with attendance tracking, agenda management, and minute recording.
+                    </p>
+                    <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-4 border border-slate-200 dark:border-slate-700">
+                        <img src="screenshots/meetings.png" alt="Meeting Management" loading="lazy" class="w-full rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                System Architecture
+            </h2>
+            <div class="glass-card p-8">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">Technical Stack</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-primary">Backend</h4>
+                        <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                            <li>• PHP 8.0+ with PDO for database operations</li>
+                            <li>• MySQL/MariaDB database</li>
+                            <li>• Session-based authentication</li>
+                            <li>• Prepared statements for security</li>
+                            <li>• bcrypt password hashing</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-4 text-primary">Frontend</h4>
+                        <ul class="space-y-2 text-slate-600 dark:text-slate-400">
+                            <li>• Modern HTML5 & CSS3</li>
+                            <li>• Vanilla JavaScript</li>
+                            <li>• Responsive design with Tailwind CSS</li>
+                            <li>• Material Design icons</li>
+                            <li>• Glass morphism UI components</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roles Section -->
+    <section id="roles" class="py-20 px-4 bg-slate-100 dark:bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                User Roles & Permissions
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="role-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-primary/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-primary">admin_panel_settings</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">System Admin</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Complete system control with access to all features and user management.
+                    </p>
+                    <ul class="text-sm text-slate-500 dark:text-slate-400 space-y-1">
+                        <li>• Manage all users and roles</li>
+                        <li>• System configuration</li>
+                        <li>• Full database access</li>
+                        <li>• Generate reports</li>
+                    </ul>
+                </div>
+                <div class="role-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-emerald-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-emerald-500">stars</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Society Pramukh</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Society-level oversight with access to all buildings and high-level management.
+                    </p>
+                    <ul class="text-sm text-slate-500 dark:text-slate-400 space-y-1">
+                        <li>• View all buildings</li>
+                        <li>• Society fund management</li>
+                        <li>• Meeting coordination</li>
+                        <li>• Report generation</li>
+                    </ul>
+                </div>
+                <div class="role-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-purple-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-purple-500">domain</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Building Admin</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Building-specific management with control over residents and maintenance.
+                    </p>
+                    <ul class="text-sm text-slate-500 dark:text-slate-400 space-y-1">
+                        <li>• Manage building residents</li>
+                        <li>• Maintenance requests</li>
+                        <li>• Building meetings</li>
+                        <li>• Unit management</li>
+                    </ul>
+                </div>
+                <div class="role-card p-6">
+                    <div class="h-12 w-12 rounded-lg bg-orange-500/20 flex items-center justify-center mb-4">
+                        <span class="material-symbols-outlined text-orange-500">person</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">Member</h3>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">
+                        Basic access for residents to view information and make requests.
+                    </p>
+                    <ul class="text-sm text-slate-500 dark:text-slate-400 space-y-1">
+                        <li>• View personal profile</li>
+                        <li>• Submit maintenance requests</li>
+                        <li>• View announcements</li>
+                        <li>• Meeting attendance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Section -->
+    <section id="database" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                Database Schema
+            </h2>
+            <div class="glass-card p-8">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">Core Tables</h3>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2 text-primary">Users Table</h4>
+                        <p class="text-slate-600 dark:text-slate-400 mb-2">
+                            Stores user authentication and profile information with role-based access.
+                        </p>
+                        <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto"><code>users (id, name, email, password, role, building_id, created_at, last_login)</code></pre>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2 text-primary">Buildings Table</h4>
+                        <p class="text-slate-600 dark:text-slate-400 mb-2">
+                            Contains society building information and unit details.
+                        </p>
+                        <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto"><code>buildings (id, name, address, total_units, created_at)</code></pre>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-2 text-primary">Maintenance Table</h4>
+                        <p class="text-slate-600 dark:text-slate-400 mb-2">
+                            Tracks maintenance requests and their status.
+                        </p>
+                        <pre class="bg-slate-900 text-slate-100 p-4 rounded-lg overflow-x-auto"><code>maintenance (id, user_id, building_id, description, status, created_at)</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- API Section -->
+    <section id="api" class="py-20 px-4 bg-slate-100 dark:bg-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                API Endpoints
+            </h2>
+            <div class="glass-card p-8">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">Authentication</h3>
+                <div class="space-y-4">
+                    <div class="border-l-4 border-primary pl-4">
+                        <h4 class="font-semibold text-slate-900 dark:text-white">POST /backend/auth/login.php</h4>
+                        <p class="text-slate-600 dark:text-slate-400">User login with email and password</p>
+                    </div>
+                    <div class="border-l-4 border-primary pl-4">
+                        <h4 class="font-semibold text-slate-900 dark:text-white">POST /backend/auth/logout.php</h4>
+                        <p class="text-slate-600 dark:text-slate-400">User logout and session destruction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section id="quick-start" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+                Quick Start Guide
+            </h2>
+            <div class="glass-card p-8">
+                <h3 class="text-2xl font-semibold mb-6 text-slate-900 dark:text-white">Installation Steps</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center font-semibold flex-shrink-0">1</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Setup Database</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Import the database.sql file into your MySQL/MariaDB server.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center font-semibold flex-shrink-0">2</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Configure Database</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Update database credentials in backend/config/database.php.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center font-semibold flex-shrink-0">3</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Start Web Server</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Use PHP built-in server or Apache/Nginx to serve the application.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="h-8 w-8 rounded-full bg-primary text-white flex items-center justify-center font-semibold flex-shrink-0">4</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 dark:text-white mb-2">Login</h4>
+                            <p class="text-slate-600 dark:text-slate-400">Access the application and login with test credentials.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="text-slate-400">
+                © 2024 Society Management System. Built with PHP, MySQL, and modern web technologies.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 h-12 w-12 rounded-full bg-primary text-white shadow-lg shadow-primary/30 opacity-0 pointer-events-none transition-all duration-300 hover:scale-110">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
