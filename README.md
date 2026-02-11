@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Society Management App (PHP + MySQL)
 
 A lightweight Society/Building management system built with **plain PHP** (no framework) and **MySQL**, intended to run on **XAMPP (Windows)**.
@@ -164,3 +165,6 @@ See:
 
 - `docs/ARCHITECTURE.md`
 
+=======
+# -society_management_system
+>>>>>>> cc4cb9e47b5d4d90af409a28a83256651af4a504
